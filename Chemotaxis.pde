@@ -18,10 +18,9 @@ int play = 0;
 int numPrey = 0;
 int numPredators = 0;
 
-void setup()
-{
+void setup(){
   size(750,750);
-  background(0);
+  background(0, 0, 0);
   prey = new Runners[20];
   predators = new Hunters[3];
   grass = new Food[30];
@@ -40,7 +39,7 @@ void setup()
 }
 
 void draw(){
-  background(0);
+  background(0, 0, 0);
   if(ticks < 180)
   {
     fill(255);
