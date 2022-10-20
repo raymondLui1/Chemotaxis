@@ -344,5 +344,4 @@ class Hunters
     ellipse(hunterX+0.4*size, hunterY-0.4*size, 0.6*size, 0.6*size);
     ellipse(hunterX, hunterY+0.5*size, 0.8*size, 0.8*size);
   }
-  
 }
