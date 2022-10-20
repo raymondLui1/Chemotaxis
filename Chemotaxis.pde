@@ -19,7 +19,7 @@ int numPrey = 0;
 int numPredators = 0;
 
 void setup(){
-  size(750,750);
+  size(350,350);
   background(0, 0, 0);
   prey = new Runners[20];
   predators = new Hunters[3];
