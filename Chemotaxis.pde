@@ -337,8 +337,7 @@ class Hunters
         hunterY -= 5; 
   }
   
-  void show()
-  {
+  void show(){
     fill(hunterColor);
     ellipse(hunterX,hunterY,2*size,2*size);
     fill(255, 255, 255);
