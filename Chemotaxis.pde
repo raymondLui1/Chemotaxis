@@ -18,7 +18,8 @@ int play = 0;
 int numPrey = 0;
 int numPredators = 0;
 
-void setup(){
+void setup()
+{
   size(750,750);
   background(0);
   prey = new Runners[20];
