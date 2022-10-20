@@ -13,7 +13,7 @@ int currentLow = 0;
 boolean checkedX = false;
 boolean checkedY = false;
 int ticks = 0;
-int size = 30;
+int bodySize = 30;
 int play = 0;
 int numPrey = 0;
 int numPredators = 0;
@@ -42,7 +42,7 @@ void draw(){
   background(0, 0, 0);
   if(ticks < 180)
   {
-    fill(255, 255, 255);
+    fill(255);
     textSize(100);
     textAlign(CENTER);
     if(ticks < 60)
@@ -150,10 +150,10 @@ class Food
   {
     fill(foodColor);
     if(eaten == false)
-      ellipse(foodX, foodY, 0.6*size, 0.6*size);
+      ellipse(foodX, foodY, 0.6*bodySize, 0.6*bodySize);
     for(int i = 0; i < prey.length; i++)
     {
-      if(dist(foodX, foodY, runX[i], runY[i]) < 0.6*size)
+      if(dist(foodX, foodY, runX[i], runY[i]) < 0.6*bodySize)
       {
         eaten = true;
         foodCount++;
@@ -194,7 +194,7 @@ class Runners
        runnerY = runnerY - (int)(Math.random()*3);  
       for(int i = 0; i< prey.length; i++)
       {
-        if(dist(runnerX, runnerY, runX[i], runY[i]) < size && i != numPrey) 
+        if(dist(runnerX, runnerY, runX[i], runY[i]) < bodySize && i != numPrey) 
         {
           if(runnerX < runX[i])
             runnerX = runnerX + (int)(Math.random())-2;
@@ -221,16 +221,16 @@ class Runners
     if(alive == true)
     {
       fill(runnerColor);
-      ellipse(runnerX,runnerY,size,size);
+      ellipse(runnerX,runnerY,bodySize,bodySize);
       fill(255, 255, 255);
-      ellipse(runnerX-0.2*size, runnerY-0.2*size, 0.3*size, 0.3*size);
-      ellipse(runnerX+0.2*size, runnerY-0.2*size, 0.3*size, 0.3*size);
-      ellipse(runnerX, runnerY+0.25*size, 0.4*size, 0.4*size);
+      ellipse(runnerX-0.2*bodySize, runnerY-0.2*bodySize, 0.3*bodySize, 0.3*bodySize);
+      ellipse(runnerX+0.2*bodySize, runnerY-0.2*bodySize, 0.3*bodySize, 0.3*bodySize);
+      ellipse(runnerX, runnerY+0.25*bodySize, 0.4*bodySize, 0.4*bodySize);
       pToken = 0; 
     }
     for(int i = 0; i < hunX.length; i++)
     {
-      if(dist(runnerX, runnerY, hunX[i], hunY[i]) < size)
+      if(dist(runnerX, runnerY, hunX[i], hunY[i]) < bodySize)
       {
         alive = false;
         pCount++;
@@ -314,7 +314,7 @@ class Hunters
      }
      for(int i = 0; i< predators.length; i++)
       {
-        if(dist(hunterX, hunterY, hunX[i], hunY[i]) < 2*size && i != numPredators) 
+        if(dist(hunterX, hunterY, hunX[i], hunY[i]) < 2*bodySize && i != numPredators) 
         {
           if(hunterX < hunX[i])
             hunterX = hunterX + (int)(Math.random())-2;
@@ -338,11 +338,11 @@ class Hunters
   
   void show(){
     fill(hunterColor);
-    ellipse(hunterX,hunterY,2*size,2*size);
+    ellipse(hunterX,hunterY,2*bodySize,2*bodySize);
     fill(255, 255, 255);
-    ellipse(hunterX-0.4*size, hunterY-0.4*size, 0.6*size, 0.6*size);
-    ellipse(hunterX+0.4*size, hunterY-0.4*size, 0.6*size, 0.6*size);
-    ellipse(hunterX, hunterY+0.5*size, 0.8*size, 0.8*size);
+    ellipse(hunterX-0.4*bodySize, hunterY-0.4*bodySize, 0.6*bodySize, 0.6*bodySize);
+    ellipse(hunterX+0.4*bodySize, hunterY-0.4*bodySize, 0.6*bodySize, 0.6*bodySize);
+    ellipse(hunterX, hunterY+0.5*bodySize, 0.8*bodySize, 0.8*bodySize);
   }
   
 }
