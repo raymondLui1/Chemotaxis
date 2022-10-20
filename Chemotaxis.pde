@@ -42,7 +42,7 @@ void draw(){
   background(0, 0, 0);
   if(ticks < 180)
   {
-    fill(255);
+    fill(255, 255, 255);
     textSize(100);
     textAlign(CENTER);
     if(ticks < 60)
